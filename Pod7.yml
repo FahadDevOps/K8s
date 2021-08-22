@@ -1,0 +1,24 @@
+#For REPLICATION CONTROLLER
+
+kind: ReplicationController               # Replication controller work on equality based.              
+apiVersion: v1
+metadata:
+  name: myreplica
+spec:
+  replicas: 2            
+  selector:        
+    myname: Fahad   				# Same with below labels (myname)                             
+  template:                
+    metadata:
+      name: testpod6
+      labels:            
+        myname: Fahad
+    spec:
+     containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Hello-Fahad; sleep 5 ; done"]
+
+
+# After write above in Editor save it and then run below command:
+# kubectl apply -f FileName.yml

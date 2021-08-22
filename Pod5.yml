@@ -1,0 +1,17 @@
+#Pod/Example OF LABELS
+
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: lhrpod
+  labels:                                                   
+    env: development
+    class: pods
+spec:
+    containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Hello-Ch; sleep 5 ; done"]
+
+# kubectl apply -f Pod5.yml

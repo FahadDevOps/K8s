@@ -1,0 +1,17 @@
+# MULTI CONTAINER POD ENVIRONMENT 
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod3
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Fahad; sleep 5 ; done"]
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-CH; sleep 5 ; done"]
+
+# After write all above lines in Editor,then run below command in terminal
+# kubectl apply -f FileName.yml
